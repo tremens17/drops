@@ -35,13 +35,14 @@ const formatResults = ($) => {
 
   return results?.reduce((prev, curr) => {
     const item = items?.find((item) => item.id === curr.name);
+    const key = getItemName(item.item.name);
 
     // rings/trinkets that have better variation already
-    if ((prev[item.item.name] ?? 0) > curr.mean) return prev;
+    if (prev[key] !== undefined && prev[key] > curr.mean - current) return prev;
 
     return {
       ...prev,
-      [getItemName(item.item.name)]: Math.floor(curr.mean - current),
+      [key]: Math.floor(curr.mean - current),
     };
   }, {});
 };
