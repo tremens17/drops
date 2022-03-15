@@ -1,6 +1,6 @@
 import { AddLink } from "@mui/icons-material";
 import React, { useState } from "react";
-import { EMPTY_ROW, TIER_BY_BOSS } from "../utils";
+import { EMPTY_ROW, TIER_BY_BOSS } from "../../public/utils";
 import TextField from "@mui/material/TextField";
 
 const fetchReport = async (report) => {
